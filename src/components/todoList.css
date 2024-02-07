@@ -1,0 +1,10 @@
+li {
+  display: flex;
+  gap: 1px;
+  align-items: center;
+}
+
+input[type="checkbox"]:checked + label.st {
+  text-decoration: line-through;
+  color: slategray;
+}
