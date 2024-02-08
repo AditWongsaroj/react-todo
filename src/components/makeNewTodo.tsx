@@ -1,6 +1,6 @@
 import { prisma } from "@/db";
 import { redirect } from "next/navigation";
-import Link from "next/link";
+import "./makeNewTodo.css";
 
 async function createTodo(data: FormData) {
   "use server";
@@ -14,19 +14,19 @@ async function createTodo(data: FormData) {
   redirect("/");
 }
 
-export default function Page() {
+export default function MakeTodo() {
   return (
     <>
-      <header>
-        <h1>new2</h1>
-      </header>
-      <form action={createTodo}>
-        <input type="text" name="title" />
-        <div>
-          <Link href="..">Cancel</Link>
-          <button type="submit">Create</button>
-        </div>
-      </form>
+      <div>
+        <button>New</button>
+        <form action={createTodo}>
+          <input type="text" name="title" />
+          <div>
+            <button type="submit">Create</button>
+            <button>Cancel</button>
+          </div>
+        </form>
+      </div>
     </>
   );
 }

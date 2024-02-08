@@ -23,6 +23,8 @@ a:active {
 body {
   color: rgb(var(--foreground-rgb));
   background: rgb(var(--background-start-rgb));
+  width: 60vw;
+  margin-inline: 20vw;
 }
 
 header {
@@ -35,18 +37,21 @@ ul {
   padding-left: 4px;
 }
 
-#link {
-  font-size: 1.25rem;
-  border: 1px solid white;
-  padding: 6px 4px;
-  border-radius: 4px;
-  outline: none;
-  align-self: center;
-  justify-items: center;
+.todo-age {
+  display: grid;
+  grid-template: "new new a b";
+  grid-template-columns: 1fr 3fr 2fr 2fr;
 }
-#link::after {
-  color: white;
+
+.todo-age > div {
+  grid-area: new;
 }
-#link:hover {
-  background-color: rgb(42, 55, 69);
+
+.todo-age > button {
+  grid-area: a;
+  width: 60%;
+}
+
+.todo-age > button + button {
+  grid-area: b;
 }

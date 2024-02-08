@@ -1,4 +1,5 @@
-import { TodoItems } from "@/components/TodoItems";
+import { TodoItems } from "@/components/TodoList";
+import MakeTodo from "@/components/makeNewTodo";
 import { prisma } from "@/db";
 import Link from "next/link";
 
@@ -18,11 +19,22 @@ export default async function Home() {
     <>
       <header>
         <h1 className="text-2x1">Todos</h1>
-        <Link id="link" href="/new">
-          New
-        </Link>
       </header>
+
+      <div className="todo-age">
+        <div>
+          <MakeTodo />
+        </div>
+        <button>age</button>
+        <button>since checked</button>
+      </div>
       <ul>
+        <li key="title">
+          <span>Done</span>
+          <span>Todo</span>
+          <span>Time since created</span>
+          <span>Time since checked</span>
+        </li>
         {todos.map((todo) => {
           return (
             <>
@@ -34,4 +46,3 @@ export default async function Home() {
     </>
   );
 }
-0;
